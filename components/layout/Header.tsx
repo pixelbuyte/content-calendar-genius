@@ -46,10 +46,10 @@ export default function Header() {
               <Sparkles size={15} />
             </div>
             <div className="hidden sm:block">
-              <span className="text-sm font-black tracking-tight bg-gradient-to-r from-cyan-400 via-blue-400 to-violet-400 bg-clip-text text-transparent">
+              <span className="text-sm font-black tracking-tight bg-gradient-to-r from-rose-400 via-fuchsia-400 to-indigo-400 bg-clip-text text-transparent">
                 Content Calendar
               </span>
-              <span className="text-sm font-black tracking-tight bg-gradient-to-r from-violet-400 via-pink-400 to-orange-400 bg-clip-text text-transparent"> Genius</span>
+              <span className="text-sm font-black tracking-tight bg-gradient-to-r from-amber-400 via-orange-400 to-pink-400 bg-clip-text text-transparent"> Genius</span>
             </div>
             <span className="sm:hidden text-sm font-black text-white">
               CCG
@@ -64,8 +64,8 @@ export default function Header() {
                 href={link.href}
                 className={`rounded-xl px-3.5 py-2 text-sm font-semibold transition-all ${
                   pathname === link.href
-                    ? "bg-white/10 bg-gradient-to-r from-cyan-400 to-violet-400 bg-clip-text text-transparent"
-                    : "text-white/70 hover:bg-white/10 hover:bg-gradient-to-r hover:from-cyan-400 hover:to-violet-400 hover:bg-clip-text hover:text-transparent"
+                    ? "bg-white/10 bg-gradient-to-r from-fuchsia-400 to-cyan-400 bg-clip-text text-transparent"
+                    : "text-slate-300 hover:text-white hover:bg-white/10"
                 }`}
               >
                 {link.label}
