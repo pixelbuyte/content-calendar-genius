@@ -30,8 +30,8 @@ export default function Header() {
         isHome
           ? scrolled
             ? "glass border-b border-white/20 shadow-[var(--shadow-sm)]"
-            : "bg-transparent border-b border-transparent"
-          : "bg-white/90 border-b border-slate-200 backdrop-blur-sm shadow-[var(--shadow-xs)]"
+            : "bg-slate-900/80 border-b border-white/10 backdrop-blur-sm"
+          : "bg-slate-900 border-b border-slate-700 shadow-[var(--shadow-xs)]"
       }`}
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
@@ -46,12 +46,12 @@ export default function Header() {
               <Sparkles size={15} />
             </div>
             <div className="hidden sm:block">
-              <span className={`text-sm font-black tracking-tight ${isHome && !scrolled ? "text-white" : "text-slate-900"}`}>
+              <span className="text-sm font-black tracking-tight bg-gradient-to-r from-cyan-400 via-blue-400 to-violet-400 bg-clip-text text-transparent">
                 Content Calendar
               </span>
-              <span className={`text-sm font-black tracking-tight gradient-text`}> Genius</span>
+              <span className="text-sm font-black tracking-tight bg-gradient-to-r from-violet-400 via-pink-400 to-orange-400 bg-clip-text text-transparent"> Genius</span>
             </div>
-            <span className={`sm:hidden text-sm font-black ${isHome && !scrolled ? "text-white" : "text-slate-900"}`}>
+            <span className="sm:hidden text-sm font-black text-white">
               CCG
             </span>
           </Link>
@@ -64,12 +64,8 @@ export default function Header() {
                 href={link.href}
                 className={`rounded-xl px-3.5 py-2 text-sm font-semibold transition-all ${
                   pathname === link.href
-                    ? isHome && !scrolled
-                      ? "bg-white/10 text-white"
-                      : "bg-blue-50 text-blue-700"
-                    : isHome && !scrolled
-                    ? "text-white/70 hover:bg-white/10 hover:text-white"
-                    : "text-slate-600 hover:bg-slate-100 hover:text-slate-900"
+                    ? "bg-white/10 bg-gradient-to-r from-cyan-400 to-violet-400 bg-clip-text text-transparent"
+                    : "text-white/70 hover:bg-white/10 hover:bg-gradient-to-r hover:from-cyan-400 hover:to-violet-400 hover:bg-clip-text hover:text-transparent"
                 }`}
               >
                 {link.label}
@@ -81,7 +77,7 @@ export default function Header() {
           <div className="hidden md:block">
             <Link
               href="/generate"
-              className="group flex items-center gap-1.5 rounded-xl bg-gradient-to-r from-blue-600 to-violet-600 px-4 py-2 text-sm font-bold text-white shadow-[var(--shadow-brand)] hover:shadow-[0_8px_24px_-4px_rgb(37_99_235/.5)] hover:-translate-y-0.5 transition-all"
+              className="group flex items-center gap-1.5 rounded-xl bg-gradient-to-r from-cyan-500 via-violet-500 to-pink-500 px-4 py-2 text-sm font-bold text-white shadow-[var(--shadow-brand)] hover:shadow-[0_8px_24px_-4px_rgb(139_92_246/.5)] hover:-translate-y-0.5 transition-all"
             >
               <Zap size={14} />
               Try Free
@@ -91,11 +87,7 @@ export default function Header() {
           {/* Mobile toggle */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className={`md:hidden rounded-xl p-2 transition-colors ${
-              isHome && !scrolled
-                ? "text-white/80 hover:bg-white/10"
-                : "text-slate-500 hover:bg-slate-100"
-            }`}
+            className="md:hidden rounded-xl p-2 transition-colors text-white/80 hover:bg-white/10"
             aria-label="Toggle menu"
           >
             {mobileOpen ? <X size={20} /> : <Menu size={20} />}
@@ -105,7 +97,7 @@ export default function Header() {
 
       {/* Mobile nav */}
       {mobileOpen && (
-        <div className="md:hidden border-t border-slate-200 bg-white px-4 py-4 space-y-1 shadow-[var(--shadow-md)] animate-[slideUp_0.2s_ease-out]">
+        <div className="md:hidden border-t border-slate-700 bg-slate-900 px-4 py-4 space-y-1 shadow-[var(--shadow-md)]">
           {navLinks.map((link) => (
             <Link
               key={link.href}
@@ -113,8 +105,8 @@ export default function Header() {
               onClick={() => setMobileOpen(false)}
               className={`flex items-center rounded-xl px-3.5 py-3 text-sm font-semibold transition-colors ${
                 pathname === link.href
-                  ? "bg-blue-50 text-blue-700"
-                  : "text-slate-600 hover:bg-slate-100"
+                  ? "bg-white/10 text-white"
+                  : "text-white/70 hover:bg-white/10 hover:text-white"
               }`}
             >
               {link.label}
