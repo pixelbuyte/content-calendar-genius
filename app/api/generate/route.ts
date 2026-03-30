@@ -54,7 +54,7 @@ async function withGemini(prompt: string): Promise<string> {
 
 async function withOpenRouter(prompt: string): Promise<string> {
   const completion = await openrouter.chat.completions.create({
-    model: "google/gemini-2.5-flash-lite",
+    model: "anthropic/claude-3-5-haiku",
     messages: [{ role: "user", content: prompt }],
     max_tokens: 2000,
   });

@@ -49,7 +49,7 @@ Return ONLY the rewritten text. No quotes, no explanation, no labels.`;
     if (model === "openrouter" && process.env.OPENROUTER_API_KEY) {
       try {
         const completion = await openrouter.chat.completions.create({
-          model: "google/gemini-2.5-flash-lite",
+          model: "anthropic/claude-3-5-haiku",
           messages: [{ role: "user", content: prompt }],
           max_tokens: 600,
         });

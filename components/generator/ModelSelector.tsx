@@ -24,11 +24,11 @@ const models: {
     name: "OpenRouter",
     badge: "Primary",
     badgeStyle: "bg-gradient-to-r from-violet-500 to-blue-500 text-white",
-    description: "Gemini 2.5 Flash Lite via OpenRouter",
+    description: "Claude 3.5 Haiku via OpenRouter",
     gradient: "from-violet-500 via-blue-500 to-cyan-400",
     ring: "ring-violet-400/40",
     logo: "⟡",
-    note: "Auto-falls back to Gemini if unavailable",
+    note: "Falls back to Gemini if unavailable",
   },
   {
     value: "gemini",
@@ -47,7 +47,7 @@ export default function ModelSelector({ value, onChange, disabled }: ModelSelect
     <div className="space-y-2">
       <div className="flex items-center justify-between">
         <label className="text-sm font-semibold text-slate-800">AI Model</label>
-        <span className="text-xs text-slate-400">OpenRouter auto-falls back to Gemini</span>
+        <span className="text-xs text-slate-400">Claude Haiku or Gemini 2.5 Flash Lite</span>
       </div>
 
       <div className="grid grid-cols-2 gap-2">
